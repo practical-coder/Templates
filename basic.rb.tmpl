@@ -45,10 +45,11 @@ git :init
 git :add => "."
 git :commit => "-a -m 'initial commit'"
 git :clone => "--bare .git /tmp/#{app_name}.git"
-run "scp -r /tmp/#{app_name}.git gitserver:/data/git/#{app_name}.git"
+# gitserver is only placeholder for your .ssh/config host
+#run "scp -r /tmp/#{app_name}.git gitserver:/data/git/#{app_name}.git"
 remove_file "/tmp/#{app_name}.git"
 #git :remote => "add <gitserver name> <url to git repo>"
-git :push => "su47 master"
+#git :push => "gitserver master"
 
 say <<-eos
 ================================================================
